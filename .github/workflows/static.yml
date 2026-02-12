@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>检测报告详情（含二维码）</title>
+    <title>检测报告详情</title>
     <style>
         * {
             margin: 0;
@@ -75,38 +75,34 @@
         .download-link:hover {
             text-decoration: underline;
         }
-        /* 二维码样式优化 */
+        /* 新增二维码样式 */
         .qrcode-section {
-            padding: 20px 16px;
+            padding: 16px;
             text-align: center;
             border-top: 1px solid #eee;
-            background-color: #fafafa;
         }
         .qrcode-title {
             font-size: 16px;
             color: #666;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         .qrcode-img {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto;
-            border: 1px solid #eee;
-            padding: 8px;
-            background: #fff;
-            border-radius: 8px;
+            display: block;
         }
     </style>
-    <!-- 引入QRCode.js库（CDN） -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <div class="container">
+        <!-- 头部栏 -->
         <div class="header-bar">
             <span class="location-tag">眉山市</span>
             <span class="title">检测报告详情</span>
             <span class="status-tag">无定论</span>
         </div>
+        <!-- 信息列表 -->
         <div class="info-list">
             <div class="info-item">
                 <span class="info-label">检测机构：</span>
@@ -163,38 +159,17 @@
             <div class="info-item">
                 <span class="info-label">检测报告：</span>
                 <span class="info-value">
-                    <a href="https://github.com/zljcscjsnetcn/scjszljc.net.cn/raw/main/4026-annual-report.pdf.pdf" class="download-link" download>查看pdf报告</a>
+                    <a href="https://github.com/zljcscjsnetcn/scjszljc.net.cn/raw/main/4026-annual-report.pdf.pdf" class="download-link" download>查看并下载PDF报告</a>
                 </span>
             </div>
         </div>
-        <!-- 二维码区域 -->
+        <!-- 二维码区域（补全闭合） -->
         <div class="qrcode-section">
-            <div class="qrcode-title">报告信息二维码（扫码可提取内容）</div>
-            <div id="qrcode" class="qrcode-img"></div>
+            <p class="qrcode-title">报告核验二维码</p>
+            <img src="" alt="检测报告核验码" class="qrcode-img">
         </div>
     </div>
-
-    <script>
-        // 整理需要嵌入二维码的核心信息（可自定义内容）
-        const reportInfo = `
-检测报告详情
-地区：眉山市
-状态：无定论
-检测机构：四川准易检测有限公司
-工程名称：仁寿县报废机动车回收拆解迁建项目（一期）
-委托单位：四川仁寿兴伟亿报废汽车回收有限公司
-见证取样：否
-主检人：刘磊
-校核人：陈俊志
-审批人：黄超
-报告编号：ZYBGDJ-202500166
-设备编号：0406-bh-000148
-检测日期：2025年10月22日
-报告日期：2025年10月22日
-检测项目：基桩低应变法检测
-检测结果：本次试验共检测20根桩，其中：Ⅰ类桩20根（100.0%）；Ⅱ类桩0根（0.00%）；Ⅲ类桩0根（0.00%）；Ⅳ类桩0根（0.00%）
-报告下载：https://github.com/zljcscjsnetcn/scjszljc.net.cn/raw/main/4026-annual-report.pdf.pdf
-        `.trim();
-            </div>
+</body>
+</html>
         </div>
         
